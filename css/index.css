@@ -4,6 +4,7 @@ body {
     font-family: 'Inter', sans-serif;
     user-select: none;
     background-color: whitesmoke;
+    line-height: 150%;
 }
 
 h1 {
@@ -80,14 +81,8 @@ p {
 }
 
 .about-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 72px;
     padding-top: 16px;
 }
-
-/* Block */
 
 .block {
     padding: 16px 0;
@@ -105,11 +100,4 @@ p {
     object-fit: cover;
     margin-right: 16px;
     border-radius: 8px;
-}
-
-.block-item-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 72px;
 }
