@@ -35,6 +35,12 @@ p {
     font-size: 16px;
 }
 
+ul li {
+    margin: 16px;
+    list-style-type: disc;
+    max-width: 77%;
+}
+
 .wrapper {
     width: 66%;
     margin: 0 auto;
