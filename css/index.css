@@ -48,6 +48,10 @@ ul li {
 }
 
 @media only screen and (max-width: 1280px) {
+    ul li {
+        max-width: 95%;
+    }
+
     .wrapper {
         width: 100%;
     }
