@@ -35,10 +35,14 @@ p {
     font-size: 16px;
 }
 
+.caption {
+    color: grey;
+}
+
 ul li {
-    margin: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
     list-style-type: disc;
-    max-width: 77%;
 }
 
 .wrapper {
@@ -48,10 +52,6 @@ ul li {
 }
 
 @media only screen and (max-width: 1280px) {
-    ul li {
-        max-width: 95%;
-    }
-
     .wrapper {
         width: 100%;
     }
@@ -86,11 +86,12 @@ ul li {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: 76%;
+    background-position-y: 70%;
     border-radius: 8px;
 }
 
 .about-text {
+    text-align: center;
     padding-top: 16px;
 }
 
@@ -101,9 +102,9 @@ ul li {
 .badge {
     background-color: black;
     color: white;
-    padding: 4px 8px;
+    padding: 6px 12px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 360px;
 }
 
 .block {
@@ -113,7 +114,14 @@ ul li {
 .block-item {
     display: flex;
     flex-direction: row;
-    padding: 16px 0;
+    padding: 16px 16px;
+    margin-top: 16px;
+    border-radius: 12px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+}
+
+.block-item:hover {
+    background-color: whitesmoke;
 }
 
 .block-item-logo {
