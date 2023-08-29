@@ -51,11 +51,6 @@ ul li {
     background-color: white;
 }
 
-@media only screen and (max-width: 1280px) {
-    .wrapper {
-        width: 100%;
-    }
-}
 
 .wrapper-container {
     padding: 32px;
@@ -90,9 +85,33 @@ ul li {
     border-radius: 8px;
 }
 
+.about-logo {
+    position: absolute;
+    top: 128px;
+    left: calc(50% - 64px);
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    margin-right: 16px;
+    border-radius: 360px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .about-text {
     text-align: center;
-    padding-top: 16px;
+    padding-top: 80px;
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .wrapper-container {
+        padding-top: none;
+        padding-bottom: none;
+    }
 }
 
 .skills {
