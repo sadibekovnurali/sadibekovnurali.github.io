@@ -7,6 +7,10 @@ body {
     line-height: 150%;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1 {
     font-weight: bold;
     font-size: 24px;
@@ -94,6 +98,7 @@ ul li {
     object-fit: cover;
     margin-right: 16px;
     border-radius: 360px;
+    border: 8px solid white;
     box-sizing: border-box;
 }
 
