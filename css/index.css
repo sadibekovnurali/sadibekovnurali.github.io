@@ -121,8 +121,15 @@ ul li {
     }
 
     .wrapper-container {
-        padding-top: none;
-        padding-bottom: none;
+        padding: 16px;
+    }
+
+    .about-cover-2 {
+        height: 240px;
+    }
+
+    .about-text {
+        padding-top: 88px;
     }
 }
 
