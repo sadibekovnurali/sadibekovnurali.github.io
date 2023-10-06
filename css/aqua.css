@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&family=Martian+Mono&display=swap');
+
+body {
+    background-color: #F0F0F0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter Tight', sans-serif;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+a,
+p,
+li,
+ul {
+    font-family: 'Martian Mono', monospace;
+    font-size: 16px;
+    color: black;
+}
+
+
+
+
+
+
+main {
+    display: grid;
+    width: 1024px;
+    margin: 0 auto;
+    grid-template-areas:
+        "header header header"
+        "avatar about contacts"
+        "works works works"
+        "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 4px;
+    background-color: white;
+}
+
+header {
+    grid-area: header;
+    height: 80px;
+    border-bottom: 4px solid black;
+}
+
+.logo {
+    width: 33%;
+    height: 80px;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+}
+
+/* .actions {
+    width: 33%;
+    height: 80px;
+    float: right;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+} */
+
+.avatar {
+    grid-area: avatar;
+    height: 240px;
+    border: 4px solid black;
+    background-image: url(../image/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.about {
+    grid-area: about;
+    border: 4px solid black;
+}
+
+aside {
+    grid-area: contacts;
+    border: 4px solid black;
+    background-color: aliceblue;
+}
+
+.works {
+    grid-area: works;
+    height: 480px;
+    border: 4px solid black;
+}
+
+footer {
+    grid-area: footer;
+    height: 80px;
+    border: 4px solid black;
+}
+
+.text {
+    margin: 32px;
+}
+
+.text h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 16px;
+}
+
+.text p,
+a,
+li {
+    margin-top: 8px;
+    line-height: 1.2;
+}
