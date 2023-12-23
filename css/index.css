@@ -1,171 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
 body {
-    font-family: 'Martian Mono', sans-serif;
-    user-select: none;
-    background-color: whitesmoke;
-    line-height: 150%;
-}
-
-a {
-    text-decoration: none;
+  background-color: #f0f0f0;
+  font-family: "Inter", sans-serif;
 }
 
 h1 {
-    font-weight: bold;
-    font-size: 24px;
-}
-
-h2 {
-    font-size: 22px;
+  font-size: 48px;
+  color: black;
 }
 
 h3 {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-h4 {
-    font-weight: bold;
-    font-size: 17px;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -1px;
 }
 
 h5 {
-    font-weight: bold;
-    font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+h6 {
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 p {
-    font-size: 15px;
+  line-height: 1.6;
 }
 
 .caption {
-    color: grey;
+  color: grey;
+}
+
+ul {
+  list-style: disc;
+  list-style-position: inside;
 }
 
 ul li {
-    margin-left: 16px;
-    margin-right: 16px;
-    list-style-type: disc;
+  line-height: 2;
 }
 
-.wrapper {
-    width: 66%;
-    margin: 0 auto;
-    background-color: white;
+.space-16 {
+  height: 16px;
 }
 
-
-.wrapper-container {
-    padding: 32px;
+.space-32 {
+  height: 32px;
 }
 
-/* Notification */
-
-.notification {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 64px;
-    background-color: blue;
-    color: white;
-    font-weight: bold;
+.line {
+  width: 100%;
+  height: 8px;
+  background-color: navy;
+  margin-top: 8px;
 }
 
-/* About */
-
-.about {
-    padding-bottom: 16px;
+.introduction {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
 }
 
-.about-cover {
-    width: 100%;
-    height: 160px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    background: -webkit-linear-gradient(#243B55, #141E30);
-    background: linear-gradient(#243B55, #141E30);
+.introduction img {
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
 }
 
-.about-cover-2 {
-    width: 100%;
-    height: 180px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    background: -webkit-linear-gradient(rgba(36, 59, 85, 0.1), white, white);
-    background: linear-gradient(rgba(36, 59, 85, 0.1), white, white);
+.layout {
+  width: 1024px;
+  margin: 0 auto;
 }
 
-.about-logo {
-    position: absolute;
-    top: 128px;
-    left: calc(50% - 68px);
-    width: 128px;
-    height: 128px;
-    object-fit: cover;
-    margin-right: 16px;
-    border-radius: 360px;
-    border: 8px solid white;
-    box-sizing: border-box;
-}
-
-.about-text {
-    text-align: center;
-    padding-top: 72px;
-}
-
-
-@media only screen and (max-width: 1280px) {
-    .wrapper {
-        width: 100%;
-    }
-
-    .wrapper-container {
-        padding: 16px;
-    }
-
-    .about-cover-2 {
-        height: 240px;
-    }
-
-    .about-text {
-        padding-top: 88px;
-    }
-}
-
-.skills {
-    padding-bottom: 16px;
-}
-
-.badge {
-    background-color: black;
-    color: white;
-    padding: 6px 12px;
-    text-align: center;
-    border-radius: 360px;
+main {
+  display: grid;
+  grid-template-areas: "about about contact" "experience experience contact" "education education contact";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  color: black;
+  padding: 8px;
 }
 
 .block {
-    padding: 16px 0;
+  background-color: #ffffff;
+  padding: 16px;
+  margin: 8px;
+  border-radius: 8px;
 }
 
 .block-item {
-    display: flex;
-    flex-direction: row;
-    padding: 16px 16px;
-    margin-top: 16px;
-    border-radius: 12px;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+  display: flex;
+  padding: 16px;
+  border-radius: 8px;
 }
 
 .block-item:hover {
-    background-color: whitesmoke;
+  background-color: #f0f0f0;
 }
 
-.block-item-logo {
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
-    margin-right: 16px;
-    border-radius: 8px;
+.block h5 {
+  margin-bottom: 16px;
+}
+
+.block-left img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  margin: 16px;
+  margin-left: 0;
+  margin-top: 0;
+  object-fit: cover;
+}
+
+.about {
+  grid-area: about;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+.contact {
+  grid-area: contact;
+  grid-template-areas: 2fr;
+}
+
+.education {
+  grid-area: education;
+}
+
+@media screen and (max-width: 480px) {
+  .layout {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  main {
+    display: grid;
+    grid-template-areas: "about about about" "contact contact contact" "experience experience experience" "education education education";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    color: black;
+    padding: 8px;
+  }
 }
