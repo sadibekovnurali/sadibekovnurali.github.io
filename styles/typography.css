@@ -8,14 +8,15 @@ h1 {
 }
 
 h2 {
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 3px;
-  font-size: 13px;
-  margin-bottom: 32px;
+  font-family: "Annapurna SIL", serif;
+  /* font-weight: 600; */
+  letter-spacing: 0.8px;
+  font-size: 26px;
+  margin-bottom: 24px;
 }
 
 b {
+  line-height: 1.6;
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -27,6 +28,7 @@ a {
 }
 
 .caption {
+  line-height: 2.2;
   color: #8e8c8c;
 }
 
