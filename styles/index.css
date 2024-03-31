@@ -30,7 +30,7 @@ body {
 }
 
 .layout {
-  width: 640px;
+  width: 768px;
   margin: 0 auto;
 }
 
@@ -49,13 +49,14 @@ body {
   justify-content: center;
   width: 96px;
   height: 96px;
-  margin-right: 16px;
+
 }
 
 .block-left img {
   width: 50%;
   height: 50%;
   object-fit: cover;
+  margin-top: 8px;
 }
 
 .block-right {
@@ -64,4 +65,9 @@ body {
   width: 75%;
 }
 
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+  .layout {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
