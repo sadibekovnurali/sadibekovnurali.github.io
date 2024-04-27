@@ -49,11 +49,9 @@ body {
   justify-content: center;
   width: 96px;
   height: 96px;
-
 }
 
 .block-left img {
-  width: 50%;
   height: 50%;
   object-fit: cover;
   margin-top: 8px;
@@ -62,7 +60,7 @@ body {
 .block-right {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 95%;
 }
 
 @media screen and (max-width: 480px) {

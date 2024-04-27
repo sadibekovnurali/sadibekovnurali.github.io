@@ -2,39 +2,123 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Nurali Sadibekov</title>
-  <link rel="stylesheet" href="./styles/reset.css" />
-  <link rel="stylesheet" href="./styles/index.css" />
-  <link rel="stylesheet" href="./styles/typography.css" />
-  <script src="scripts/block.js" type="text/javascript" defer></script>
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/typography.css">
+  <script src="scripts/block.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function parseDate(dateString) {
+        // Parse MM/YYYY into a Date object
+        const [month, year] = dateString.split("/");
+        return new Date(`${year}-${month}-01`);
+      }
+
+      function calculateDurationText(totalMonths) {
+        if (totalMonths < 12) {
+          return `${totalMonths} months`;
+        } else {
+          const years = Math.floor(totalMonths / 12);
+          const remainingMonths = totalMonths % 12;
+          let result = `${years} year${years > 1 ? "s" : ""}`;
+          if (remainingMonths > 0) {
+            result += ` and ${remainingMonths} month${remainingMonths > 1 ? "s" : ""}`;
+          }
+          return result;
+        }
+      }
+
+      function calculateDuration(start, end) {
+        const startDate = parseDate(start);
+        const endDate = parseDate(end);
+        const years = endDate.getFullYear() - startDate.getFullYear();
+        const months = endDate.getMonth() - startDate.getMonth();
+
+        return (years * 12) + months;
+      }
+
+      const experiences = [
+        { start: '08/2023', end: '04/2024', elementId: 'exp1' },
+        { start: '11/2021', end: '05/2022', elementId: 'exp2' },
+        { start: '09/2019', end: '09/2020', elementId: 'exp3' }
+      ];
+
+      experiences.forEach(exp => {
+        const totalMonths = calculateDuration(exp.start, exp.end);
+        const durationText = calculateDurationText(totalMonths);
+        const element = document.getElementById(exp.elementId);
+        if (element) {
+          element.textContent = `${exp.start} - ${exp.end} • ${durationText}`;
+        }
+      });
+
+      const educations = [
+        { start: '09/2024', end: '06/2029', elementId: 'edu1' },
+        { start: '09/2019', end: '06/2023', elementId: 'edu2' }
+      ];
+
+      educations.forEach(edu => {
+        const totalMonths = calculateDuration(edu.start, edu.end);
+        const durationText = calculateDurationText(totalMonths);
+        const element = document.getElementById(edu.elementId);
+        if (element) {
+          element.textContent = `${edu.start} - ${edu.end}`;
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
-  <div class="introduction">
-    <img src="/images/Avatar.jpg" alt="" />
-    <div class="space-16"></div>
+  <br>
+
+  <!-- <div class="introduction">
+    <img src="/images/Avatar.jpg" alt="">
     <h1>Nurali Sadibekov</h1>
     <p>batyrkhanurali@gmail.com</p>
-  </div>
+  </div> -->
+
   <div class="layout">
-    <!-- Publications -->
+    <!-- About -->
     <div class="block">
-      <h2>Works</h2>
+      <h2>About</h2>
       <div class="block-item">
-        <!-- <div class="block-left">
-          <img src="/image/Placeholder.png" alt="" />
-        </div> -->
         <div class="block-right">
-          <b>Teach Yourself Computer Science</b>
-          <p>Kazakh translation of popular self-learning resource.</p>
-          <a href="">Webpage</a>
+          <b>Nurali Sadibekov</b>
+          <p>الوقت من ذهب</p>
+          <p>Welcome to my webpage.</p>
         </div>
       </div>
     </div>
 
     <br>
+
+    <!-- Works -->
+    <div class="block">
+      <h2>Works</h2>
+      <div class="block-item">
+        <div class="block-right">
+          <b>Teach Yourself Computer Science</b>
+          <a href="https://teachyourselfcs.com" target="_blank">Webpage</a>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Publications -->
+    <!-- <div class="block">
+      <h2>Publications</h2>
+      <div class="block-item">
+        <div class="block-right">
+          <p class="caption">No publications yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <br> -->
 
     <!-- Experience -->
     <div class="block">
@@ -43,36 +127,36 @@
         <div class="block-left">
           <img
             src="https://media.licdn.com/dms/image/C4E0BAQEeIdIXXYPc7g/company-logo_200_200/0/1636951240699?e=2147483647&v=beta&t=pp2UgdxjjkoGxFMmnS92M3EcE67NchFWNd7lcZRdFsg"
-            alt="" />
+            alt="">
         </div>
         <div class="block-right">
           <b>Software Engineer</b>
-          <p>Paloma365</p>
-          <p class="caption">Aug 2023 - Present &#x2022; 9 months</p>
+          <p>PalomaPOS</p>
+          <p class="caption" id="exp1"></p>
         </div>
       </div>
       <div class="block-item">
         <div class="block-left">
           <img
             src="https://media.licdn.com/dms/image/C4D0BAQEyZhwVW8gM4g/company-logo_200_200/0/1630531120934/tefogo_logo?e=2147483647&v=beta&t=7yOx9gCGH_LnOOqLJrozYgrTi7UO0E2RoOSnTKkIMk0"
-            alt="" />
+            alt="">
         </div>
         <div class="block-right">
           <b>Software Engineer</b>
-          <p>Tefogo</p>
-          <p class="caption">Nov 2021 - May 2022 &#x2022; 7 months</p>
+          <p>Tefogo • London, United Kingdom</p>
+          <p class="caption" id="exp2"></p>
         </div>
       </div>
       <div class="block-item">
         <div class="block-left">
           <img
-            src="https://media.licdn.com/dms/image/C5103AQEua-SvG0RZvw/profile-displayphoto-shrink_800_800/0/1517400073012?e=2147483647&v=beta&t=gizkUEms76YGfApFlUTfdxY7TEwR4BXchbOqfwdA_Ec"
-            alt="" />
+            src="https://media.licdn.com/dms/image/C4E0BAQHJqIqHPO47vA/company-logo_200_200/0/1630637835791?e=2147483647&v=beta&t=OnlQgof5pd_t1s5R5HVOLZ1Gm9KvGGqwHuOMuOpB_xU"
+            alt="">
         </div>
         <div class="block-right">
           <b>Project Assistant</b>
-          <p>Enactus Kazakhstan</p>
-          <p class="caption">Sep 2019 - Sep 2020 &#x2022; 1 year</p>
+          <p>Enactus Kazakhstan • Almaty, Kazakhstan</p>
+          <p class="caption" id="exp3"></p>
         </div>
       </div>
     </div>
@@ -84,17 +168,33 @@
       <h2>Education</h2>
       <div class="block-item">
         <div class="block-left">
-          <img src="/images/placeholder.png" alt="" />
+          <img
+            src="https://media.licdn.com/dms/image/C560BAQHWUjwogE235A/company-logo_200_200/0/1631302728894?e=2147483647&v=beta&t=iOiGwMyNDydhDm0NK5i_AXxzxFiZ6r9w3VmYrBPeV9g"
+            alt="">
+        </div>
+        <div class="block-right">
+          <b>Saint Petersburg State University</b>
+          <p>Bachelor of Science • Computer Science</p>
+          <p class="caption" id="edu1"></p>
+        </div>
+      </div>
+      <div class="block-item">
+        <div class="block-left">
+          <img src="/images/Placeholder.png" alt="">
         </div>
         <div class="block-right">
           <b>Innovative Technical College</b>
-          <p>Associate of Science &#x2022; Information Security</p>
-          <p class="caption">Sep 2019 - Jun 2023</p>
+          <p>Associate of Science • Information Security</p>
+          <ul>
+            <li>GPA: 3.68</li>
+          </ul>
+          <p class="caption" id="edu2"></p>
         </div>
       </div>
     </div>
 
     <br>
+  </div>
 </body>
 
 </html>
